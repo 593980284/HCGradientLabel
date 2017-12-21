@@ -71,7 +71,7 @@
 
 - (void)btn3Tap:(UIButton *)sender
 {
-    label1.gradientDirection = (++label1.gradientDirection)%3;
+    label1.gradientDirection = (++label1.gradientDirection)%4;
 }
 
 - (void)btn4Tap:(UIButton *)sender

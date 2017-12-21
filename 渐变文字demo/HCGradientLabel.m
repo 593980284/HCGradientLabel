@@ -55,6 +55,10 @@
         }
             break;
             
+            case HCGradientDirectionTopToTopBottom:
+        {
+            endPoint = CGPointMake(0, height);
+        }
         default:
             break;
     }

@@ -10,7 +10,8 @@
 typedef NS_ENUM(NSInteger, HCGradientDirection) {//渐变色的方向
     HCGradientDirectionLeftToRight = 0,          //左 --> 右
     HCGradientDirectionTopLeftToBottomRight = 1, //左上 --> 右下
-    HCGradientDirectionBottomLeftToTopRight = 2  //左下 --> 右上
+    HCGradientDirectionBottomLeftToTopRight = 2,  //左下 --> 右上
+    HCGradientDirectionTopToTopBottom = 3 //上 -> 下
 };
 @interface HCGradientLabel : UILabel
 
