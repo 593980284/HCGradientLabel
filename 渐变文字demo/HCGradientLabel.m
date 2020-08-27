@@ -20,6 +20,11 @@
     CGFloat height = rect.size.height;
     
     CGContextRef context = UIGraphicsGetCurrentContext();
+    //行间距
+    CGFloat h = self.font.lineHeight - self.font.pointSize;
+    
+    CGContextTranslateCTM(context, 0, height-h*2);
+    CGContextScaleCTM(context, 1.0f, -1.0f);
     
     CGImageRef imageRef = CGBitmapContextCreateImage(context);//获得倒置的图片
     CGContextClearRect(context, rect);
@@ -28,8 +33,6 @@
     究其原因是因为Core Graphics源于Mac OS X系统，在Mac OS X中，坐标原点在左下方并且正y坐标是朝上的，而在iOS中，原点坐标是在左上方并且正y坐标是朝下的。在大多数情况下，这不会出现任何问题，因为图形上下文的坐标系统是会自动调节补偿的。但是创建和绘制一个CGImage对象时就会暴露出倒置问题。
      */
     //下面的两行代码将：原点在左下方并且正y坐标是朝上的
-    CGContextTranslateCTM(context, 0, height);
-    CGContextScaleCTM(context, 1.0f, -1.0f);
     //下面的context 原点在左下 并且 正y坐标是朝上的
     CGContextClipToMask(context, rect, imageRef);//将图片设置为mark
     

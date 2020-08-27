@@ -19,12 +19,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    label1 = [UILabel new];
+    label1.backgroundColor = [UIColor redColor];
+     label1.text = @"渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右";
+       label1.numberOfLines = 0;
+       label1.font = [UIFont systemFontOfSize:12];
+       label1.frame = CGRectMake(200, 64, 200, 200);
+       [self.view addSubview:label1];
+    
     label1 = [[HCGradientLabel alloc]initWithColors:@[[UIColor redColor],[UIColor greenColor]]];
     label1.text = @"渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右,渐变文字从左->右";
     label1.numberOfLines = 0;
     label1.font = [UIFont systemFontOfSize:12];
-    label1.frame = CGRectMake(0, 64, 200, 120);
+    label1.frame = CGRectMake(0, 64, 200, 200);
     [self.view addSubview:label1];
+    
+
     
  
     
